@@ -32,7 +32,7 @@ void OverlappedStruct::Reset()
 
 bool OverlappedStruct::Lock()
 {
-    long    prevState = AtomicTestAndSet(&m_lock, OV_UNLOCKED, OV_LOCKED);
+    long    prevState = AtomicTestAndSet(&m_lock, OV_LOCKED, OV_UNLOCKED);
     return  prevState == OV_UNLOCKED;
 }
 
