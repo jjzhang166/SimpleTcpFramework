@@ -25,10 +25,10 @@
 #define AtomicSet(plTarget, value)       InterlockedExchange((long*)(plTarget), (long)(value))
 #define AtomicSet64(pllTarget, value)    InterlockedExchange64((long long*)(pllTarget), (long long)(value))
 
-#define AtomicTestAndSet(plDest, lComparand, lExchange)\
+#define AtomicTestAndSet(plDest, lExchange, lComparand)\
     InterlockedCompareExchange((long*)(plDest), (long)(lExchange), (long)(lComparand))
 
-#define AtomicTestAndSet64(pllDest, llComparand, llExchange)\
+#define AtomicTestAndSet64(pllDest, llExchange, llComparand)\
     InterlockedCompareExchange64((long long*)(pllDest), (long long)(llExchange), (long long)(llComparand))
 
 #endif
